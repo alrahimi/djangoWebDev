@@ -1,0 +1,22 @@
+{% extends 'job_portal/base.html' %}
+
+{% block title %}Application Submitted | Job Portal{% endblock %}
+
+{% block content %}
+<section class="card success-card centered-card">
+    <div class="success-icon" aria-hidden="true">✓</div>
+    <p class="eyebrow">Application received</p>
+    <h1>Thank you for applying</h1>
+    {% if job %}
+        <p>Your application for <strong>{{ job.title }}</strong> at <strong>{{ job.company.name }}</strong> has been submitted.</p>
+    {% else %}
+        <p>Your application has been submitted.</p>
+    {% endif %}
+    <div class="success-actions">
+        <a class="button primary" href="{% url 'job_list' %}">Browse more jobs</a>
+        {% if job %}
+            <a class="button secondary" href="{% url 'job_detail' job.pk %}">Back to job</a>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

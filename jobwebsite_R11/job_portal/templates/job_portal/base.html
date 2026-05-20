@@ -1,0 +1,35 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Job Portal{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'job_portal/css/site.css' %}">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="{% url 'job_list' %}" aria-label="Job Portal home">
+                <span class="brand-mark">JP</span>
+                <span>Job Portal</span>
+            </a>
+
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="{% url 'job_list' %}">Jobs</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container page">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>Simple Django job board for browsing roles and submitting applications.</p>
+            <a href="{% url 'job_list' %}">Browse jobs</a>
+        </div>
+    </footer>
+</body>
+</html>

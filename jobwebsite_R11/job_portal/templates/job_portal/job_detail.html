@@ -1,0 +1,42 @@
+{% extends 'job_portal/base.html' %}
+
+{% block title %}{{ job.title }} | Job Portal{% endblock %}
+
+{% block content %}
+<a class="back-link" href="{% url 'job_list' %}">&larr; Back to jobs</a>
+
+<section class="detail-layout">
+    <article class="card detail-card">
+        <p class="eyebrow">{{ job.company.name }}</p>
+        <h1>{{ job.title }}</h1>
+        <div class="job-meta-list detail-meta" aria-label="Job summary">
+            <span>{{ job.location }}</span>
+            <span>{{ job.get_job_type_display }}</span>
+            <span>{{ job.get_work_mode_display }}</span>
+            <span>Posted {{ job.created_at|date:"M j, Y" }}</span>
+        </div>
+
+        <div class="description-block">
+            <h2>Job description</h2>
+            <div class="description">
+                {{ job.description|linebreaks }}
+            </div>
+        </div>
+    </article>
+
+    <aside class="card apply-panel" aria-label="Apply for this job">
+        <h2>Interested?</h2>
+        <p>Apply directly with your name, email, and resume. No account is required.</p>
+        <a class="button primary full-width" href="{% url 'apply_to_job' job.pk %}">Apply for this job</a>
+
+        <div class="company-panel">
+            <h3>About {{ job.company.name }}</h3>
+            {% if job.company.location %}<p class="meta">{{ job.company.location }}</p>{% endif %}
+            {% if job.company.description %}<p>{{ job.company.description }}</p>{% endif %}
+            {% if job.company.website %}
+                <a class="button secondary full-width" href="{{ job.company.website }}" target="_blank" rel="noopener">Company website</a>
+            {% endif %}
+        </div>
+    </aside>
+</section>
+{% endblock %}

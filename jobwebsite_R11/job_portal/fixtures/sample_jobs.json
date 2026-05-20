@@ -1,0 +1,77 @@
+[
+  {
+    "model": "job_portal.company",
+    "pk": 1,
+    "fields": {
+      "name": "Acme Software",
+      "website": "https://example.com/acme-software",
+      "description": "A small software company building practical internal tools and web applications.",
+      "location": "Remote",
+      "created_at": "2026-05-07T00:00:00Z",
+      "updated_at": "2026-05-07T00:00:00Z"
+    }
+  },
+  {
+    "model": "job_portal.company",
+    "pk": 2,
+    "fields": {
+      "name": "Northwind Services",
+      "website": "https://example.com/northwind-services",
+      "description": "A service company focused on document review, operations support, and hiring workflows.",
+      "location": "Camden, NJ",
+      "created_at": "2026-05-07T00:00:00Z",
+      "updated_at": "2026-05-07T00:00:00Z"
+    }
+  },
+  {
+    "model": "job_portal.company",
+    "pk": 3,
+    "fields": {
+      "name": "BrightPath Media",
+      "website": "https://example.com/brightpath-media",
+      "description": "A media and content team that maintains public-facing web pages and job content.",
+      "location": "Hybrid",
+      "created_at": "2026-05-07T00:00:00Z",
+      "updated_at": "2026-05-07T00:00:00Z"
+    }
+  },
+  {
+    "model": "job_portal.job",
+    "pk": 1,
+    "fields": {
+      "title": "Junior Python Developer",
+      "company": 1,
+      "description": "Help build and maintain internal Python and Django tools. This is a good role for a developer who understands web basics and wants to grow with a small engineering team.",
+      "location": "Remote",
+      "job_type": "full_time",
+      "work_mode": "remote",
+      "created_at": "2026-05-07T00:00:00Z"
+    }
+  },
+  {
+    "model": "job_portal.job",
+    "pk": 2,
+    "fields": {
+      "title": "Data Entry Specialist",
+      "company": 2,
+      "description": "Review incoming documents, enter structured records, and coordinate with hiring managers. Attention to detail and clear communication are important.",
+      "location": "Camden, NJ",
+      "job_type": "part_time",
+      "work_mode": "on_site",
+      "created_at": "2026-05-07T00:00:00Z"
+    }
+  },
+  {
+    "model": "job_portal.job",
+    "pk": 3,
+    "fields": {
+      "title": "Web Content Assistant",
+      "company": 3,
+      "description": "Assist with updating web pages, reviewing job posts, and keeping public-facing content accurate and readable.",
+      "location": "Hybrid",
+      "job_type": "contract",
+      "work_mode": "hybrid",
+      "created_at": "2026-05-07T00:00:00Z"
+    }
+  }
+]

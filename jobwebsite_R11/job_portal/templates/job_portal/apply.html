@@ -1,0 +1,11 @@
+{% extends 'job_portal/base.html' %}
+
+{% block title %}Apply{% endblock %}
+
+{% block content %}
+<section class="card empty-state">
+    <h1>Choose a job first</h1>
+    <p>Applications are now tied to a specific job. Please browse jobs and choose one to apply.</p>
+    <a class="button primary" href="{% url 'job_list' %}">Browse jobs</a>
+</section>
+{% endblock %}
